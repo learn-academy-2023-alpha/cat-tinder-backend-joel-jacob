@@ -42,11 +42,11 @@ RSpec.describe "Celebrities", type: :request do
           image:'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.glamour.com%2Fstory%2Frege-jean-page-leaving-bridgerton-ok&psig=AOvVaw2ElpGua5ilaQQzR7787uAX&ust=1680644900143000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCJig56PYjv4CFQAAAAAdAAAAABAE'
         }
       }
-patch "/celebrities/#{celebrity.id}", params:
-  updated_celebrity_params
-    updated_celebrity = Celebrity.find(celebrity.id)
-       expect(response).to have_http_status(200)
-     expect(updated_celebrity.age).to eq "35"
+        patch "/celebrities/#{celebrity.id}", params:
+           updated_celebrity_params
+           updated_celebrity = Celebrity.find(celebrity.id)
+          expect(response).to have_http_status(200)
+        expect(updated_celebrity.age).to eq "35"
     end 
   end
 
@@ -88,6 +88,7 @@ patch "/celebrities/#{celebrity.id}", params:
 
 
 end
+
 
 
 
