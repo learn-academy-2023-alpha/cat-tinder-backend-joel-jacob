@@ -9,6 +9,8 @@ class CelebritiesController < ApplicationController
         celebrity = Celebrity.create(celebrity_params)
         if celebrity.valid?
             render json: celebrity 
+        else
+            render json: celebrity.errors, status: 422
         end
     end
   
@@ -17,6 +19,8 @@ class CelebritiesController < ApplicationController
         celebrity.update(celebrity_params)
         if celebrity.valid?
             render json: celebrity 
+        else
+            render json: celebrity.errors, status: 422
         end
     end
   
